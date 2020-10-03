@@ -1,0 +1,6 @@
+APPLICATION_ON=
+1
+INTERVAL=
+1
+WEBSITE=
+https://www.google.com
