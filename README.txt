@@ -6,25 +6,24 @@ More features to be added soon.
 This project as of 03Oct2020 consists of below components-
 1. AVG_MAIN.py :
 This is the Publisher module as per the Publisher-Subscriber Observer Design Pattern.
-The responsibility of this module is to provide required data to subscribers.
+The responsibility of this module is to provide required data (average uptime, timestamps, latency) to subscribers.
 
 2. REST_GET_TEST.py and PING_TEST.py
 Both these modules perform the function of testing the internet reachability
-either through RESP RPC call or through PING, and then provide data to the 
-Publiser component AVG_MAIN.py for further processing.
+either through RESP RPC call or through PING, and then provide this data to the 
+Publiser component AVG_MAIN.py for further processing. The AVG_MAIN.py module applies the logic to calculate the
+Average uptime, latency for given interval.
 
 3. Subscriber_Graph_Output.py and Subcriber_Excel.py
-These modules play the role of "Subscribers" as defined in the Observer Design
-Pattern.
-They subscribe to the Publisher component to get data from the Publisher
-whenever new data is available.
-The primary functionality of these moudles is to get data from Publiser and create
-graphs using openpyxl or matplotlib.
+These modules play the role of "Subscribers" as defined in the Observer Design Pattern.
+They subscribe to the Publisher module to get data from the Publisher whenever new data is available.
+The primary function of these moudles is to get data (average uptime, timestamps, latency) from Publiser and create
+graphs, Excel Report using openpyxl or matplotlib.
 
 4. SubscriberInterface.py
 This module implements Abstract based Class for Subscribers to be able to implement
 the method defined herein, and then the Subscriber should be able to get updated
-date from Publiser component by subscribing to it using the Publiser.attach() method.
+data from Publiser component by subscribing to it using the Publiser.attach() method.
 
 5. MainCode.py
 This is the main module that imports all the others, and initiates the code execution.
