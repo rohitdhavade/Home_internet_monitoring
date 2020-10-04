@@ -2,7 +2,7 @@ import time
 from REST_GET_TEST import REST_GET_TEST
 from datetime import datetime
 
-class AVG_MAIN(REST_GET_TEST):
+class AVG_MAIN():
     def __init__(self,interval:int,web_to_test:list):
         self.interval:int = interval #time interval in minutes
         self.web_to_test:list = web_to_test
